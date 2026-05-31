@@ -3,199 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>실시간 정보센터</title>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<title>실시간 정보</title>
 
-body{
-    font-family:'Noto Sans KR', sans-serif;
-    background:#f5f7fa;
-}
-
-/* 헤더 */
-header{
-    background:#1f2937;
-    color:white;
-}
-
-.top-header{
-    text-align:center;
-    padding:20px;
-}
-
-#clock{
-    margin-top:8px;
-    color:#d1d5db;
-}
-
-/* 메뉴 */
-nav{
-    background:#111827;
-}
-
-.menu{
-    display:flex;
-    justify-content:center;
-    list-style:none;
-    flex-wrap:wrap;
-}
-
-.menu li{
-    position:relative;
-}
-
-.menu a{
-    display:block;
-    padding:15px 25px;
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
-}
-
-.menu a:hover{
-    background:#2563eb;
-}
-
-/* 본문 */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-
-iframe{
-    width:100%;
-    height:700px;
-    border:none;
-}
-
-.kakao-banner{
-    text-align:center;
-}
-
-.kakao-banner img{
-    width:100%;
-    max-width:700px;
-    border-radius:10px;
-}
-
-/* 푸터 */
-footer{
-    text-align:center;
-    padding:30px;
-    color:#666;
-}
-
-@media(max-width:768px){
-
-.menu{
-    flex-direction:column;
-}
-
-.menu a{
-    text-align:center;
-    border-top:1px solid #374151;
-}
-
-iframe{
-    height:600px;
-}
-
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
 <header>
-
-    <div class="top-header">
-        <h1>실시간 정보센터</h1>
-        <div id="clock"></div>
-    </div>
-
-    <nav>
-        <ul class="menu">
-            <li><a href="#home">홈</a></li>
-            <li><a href="#data">실시간 데이터</a></li>
-            <li><a href="#chat">오픈채팅</a></li>
-            <li><a href="#notice">공지사항</a></li>
-            <li><a href="#contact">문의하기</a></li>
-        </ul>
-    </nav>
-
+    <h1>실시간 정보</h1>
 </header>
 
 <div class="container">
 
-    <section id="home" class="card">
-        <h2>홈</h2>
-        <p>환영합니다. 실시간 정보를 확인할 수 있습니다.</p>
-    </section>
+<div class="card">
 
-    <section id="data" class="card">
-        <h2>실시간 데이터</h2>
-
-        <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vStUOzyVL0J8xiRDwcg06VVJzW3kiTcuuwmbiul6XW6zMFdjI4oQJBr45PnTzJrkxygqoeGwx85gijH/pubhtml?gid=2132959836&range=A1:D14&widget=false"
-        loading="lazy">
-        </iframe>
-    </section>
-
-    <section id="chat" class="card">
-        <h2>카카오톡 오픈채팅</h2>
-
-        <div class="kakao-banner">
-            <a href="https://open.kakao.com/o/gNFprHE" target="_blank">
-                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhb_SWgINkBSlHd4NRxrHu37DzmeEcERXjp2KvSAeuQPhGVD3Lpty38HtXELDj83JcVbPMmFFeDCHgvprswgO5R2rWicae7S4DoJsArfkKVxbuRlVaCgiLnMPmekB9LWACndu20HpsVyfYP/s640/%25EC%25B9%25B4%25EC%25B9%25A4%25EC%2598%25A4%25ED%2586%25A1+%25EC%2598%25A4%25ED%2594%2588%25EC%25B1%2584%25ED%258C%2585+%25EB%25B0%25B0%25EB%2584%2588.png"
-                alt="카카오 오픈채팅">
-            </a>
-        </div>
-    </section>
-
-    <section id="notice" class="card">
-        <h2>공지사항</h2>
-        <ul>
-            <li>공지사항 1</li>
-            <li>공지사항 2</li>
-            <li>공지사항 3</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="card">
-        <h2>문의하기</h2>
-        <p>이메일 또는 카카오톡 오픈채팅으로 문의해 주세요.</p>
-    </section>
+<iframe
+src="https://docs.google.com/spreadsheets/d/e/2PACX-1vStUOzyVL0J8xiRDwcg06VVJzW3kiTcuuwmbiul6XW6zMFdjI4oQJBr45PnTzJrkxygqoeGwx85gijH/pubhtml?gid=2132959836&range=A1:D14&widget=false">
+</iframe>
 
 </div>
 
-<footer>
-    © 2026 실시간 정보센터
-</footer>
+</div>
 
-<script>
-function updateClock(){
-    const now = new Date();
-
-    document.getElementById("clock").innerHTML =
-    now.toLocaleString("ko-KR");
-}
-
-updateClock();
-setInterval(updateClock,1000);
-</script>
-
+<script src="js/app.js"></script>
 </body>
 </html>
