@@ -1,74 +1,60 @@
-<!-- Font Awesome 아이콘 -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<div class="bottom-nav">
 
-<style>
-.icon-menu{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-    gap:15px;
-    margin:20px 0;
-}
+<a href="#home">
+    <i class="fas fa-house"></i>
+    <span>홈</span>
+</a>
 
-.icon-box{
-    background:#fff;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    text-decoration:none;
-    color:#333;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
-    transition:.3s;
-}
+<a href="#data">
+    <i class="fas fa-chart-line"></i>
+    <span>정보</span>
+</a>
 
-.icon-box:hover{
-    transform:translateY(-5px);
-    background:#2563eb;
-    color:#fff;
-}
+<a href="#chat">
+    <i class="fas fa-comments"></i>
+    <span>채팅</span>
+</a>
 
-.icon-box i{
-    font-size:35px;
-    margin-bottom:10px;
-    display:block;
-}
+<a href="#notice">
+    <i class="fas fa-bell"></i>
+    <span>공지</span>
+</a>
 
-.icon-title{
-    font-size:14px;
-    font-weight:bold;
-}
-</style>
-
-<div class="icon-menu">
-
-    <a href="#home" class="icon-box">
-        <i class="fas fa-house"></i>
-        <div class="icon-title">홈</div>
-    </a>
-
-    <a href="#data" class="icon-box">
-        <i class="fas fa-chart-line"></i>
-        <div class="icon-title">실시간정보</div>
-    </a>
-
-    <a href="#chat" class="icon-box">
-        <i class="fas fa-comments"></i>
-        <div class="icon-title">오픈채팅</div>
-    </a>
-
-    <a href="#notice" class="icon-box">
-        <i class="fas fa-bullhorn"></i>
-        <div class="icon-title">공지사항</div>
-    </a>
-
-    <a href="#contact" class="icon-box">
-        <i class="fas fa-envelope"></i>
-        <div class="icon-title">문의하기</div>
-    </a>
-
-    <a href="#favorite" class="icon-box">
-        <i class="fas fa-star"></i>
-        <div class="icon-title">즐겨찾기</div>
-    </a>
+<a href="#contact">
+    <i class="fas fa-user"></i>
+    <span>문의</span>
+</a>
 
 </div>
+
+<style>
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    box-shadow:0 -2px 10px rgba(0,0,0,.1);
+    z-index:9999;
+}
+
+.bottom-nav a{
+    flex:1;
+    padding:10px 0;
+    text-align:center;
+    text-decoration:none;
+    color:#555;
+}
+
+.bottom-nav i{
+    display:block;
+    font-size:22px;
+    margin-bottom:4px;
+}
+
+.bottom-nav span{
+    font-size:12px;
+}
+</style>
