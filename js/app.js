@@ -1,16 +1,15 @@
-function toggleMenu() {
+function toggleMenu(){
 
-    document
-        .getElementById("sideMenu")
+    document.getElementById("sideMenu")
         .classList.toggle("active");
 
-    document
-        .getElementById("overlay")
+    document.getElementById("overlay")
         .classList.toggle("active");
 }
 
-fetch("menu.html")
-.then(response => response.text())
+/* 메뉴 삽입 */
+fetch("includes/menu.html")
+.then(res => res.text())
 .then(data => {
-    document.getElementById("menu-container").innerHTML = data;
+    document.body.insertAdjacentHTML("afterbegin", data);
 });
