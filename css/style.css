@@ -54,6 +54,13 @@ iframe{
     z-index:1001;
 }
 
+.menu-btn span{
+    width:22px;
+    height:2px;
+    background:white;
+    border-radius:2px;
+}
+
 /* 사이드 메뉴 */
 .side-menu{
     position:fixed;
