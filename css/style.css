@@ -82,7 +82,7 @@ header{
    iframe
 ========================= */
 iframe{
-    width:50%;
+    width:300px;
     min-height:750px;
     height:80vh;
     border:none;
