@@ -83,7 +83,6 @@ header{
 ========================= */
 iframe{
     width:300px;
-    height:80vh;
     border:none;
     border-radius:10px;
     background:#fff;
@@ -219,7 +218,6 @@ iframe{
 
     iframe{
         height:65vh;
-/*        min-height:750px;
     }
 
     .side-menu{
@@ -253,7 +251,7 @@ iframe{
 
     iframe{
         height:60vh;
-/*        min-height:750px;
+
     }
 
     .side-menu{
