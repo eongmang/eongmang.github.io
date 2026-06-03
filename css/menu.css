@@ -33,8 +33,11 @@
     }
 
 .menu-icon {
-  width: 30px;
-  cursor: pointer;
+   width: 30px;
+   cursor: pointer;
+   background:#6d28d9;
+   border:none;
+   border-radius:12px;
 }
 
 .menu-icon span {
