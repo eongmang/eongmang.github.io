@@ -35,9 +35,9 @@ header h1 {
 ========================= */
 
 .container {
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem;
 }
 
 /* =========================
@@ -67,17 +67,6 @@ header h1 {
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
-}
-
-.stackedit__left {
-    position: fixed;
-    width: 250px;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-.stackedit__right {
-    margin-left: 250px;
 }
 
 /* =========================
@@ -125,14 +114,4 @@ header h1 {
     }
 }
 
-/* StackEdit Responsive */
-@media (max-width: 1060px) {
 
-    .stackedit__left {
-        display: none;
-    }
-
-    .stackedit__right {
-        margin-left: 0;
-    }
-}
