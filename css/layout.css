@@ -1,18 +1,13 @@
+
 /* =========================
-   Layout Reset
+   Base Layout
 ========================= */
 body {
     line-height: 1.6;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
 /* =========================
-   Container Layout
+   Container
 ========================= */
 .container {
     max-width: 1100px;
@@ -21,7 +16,7 @@ img {
 }
 
 /* =========================
-   Header Layout
+   Header
 ========================= */
 header {
     text-align: center;
@@ -29,7 +24,7 @@ header {
 }
 
 /* =========================
-   Card Layout
+   Card
 ========================= */
 .card {
     padding: 20px;
@@ -37,23 +32,8 @@ header {
     border-radius: 15px;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 15px;
-}
-
 /* =========================
-   Responsive Image
-========================= */
-.responsive-img {
-    width: 100%;
-    height: auto;
-}
-
-/* =========================
-   iframe Layout
+   iframe
 ========================= */
 iframe {
     width: 300px;
@@ -62,61 +42,7 @@ iframe {
 }
 
 /* =========================
-   Menu Button Layout
-========================= */
-.menu-btn {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    width: 48px;
-    height: 48px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* =========================
-   Side Menu Layout
-========================= */
-.side-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px;
-    height: 100%;
-
-    transform: translateX(-100%);
-    overflow-y: auto;
-    padding-top: 60px;
-}
-
-.side-menu.active {
-    transform: translateX(0);
-}
-
-/* =========================
-   Overlay Layout
-========================= */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    opacity: 0;
-    visibility: hidden;
-}
-
-.overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* =========================
-   Responsive Layout Only
+   Responsive Layout
 ========================= */
 @media (max-width: 768px) {
     .container,
@@ -133,10 +59,5 @@ iframe {
     .card {
         padding: 12px;
         border-radius: 12px;
-    }
-
-    .menu-btn {
-        top: 10px;
-        left: 10px;
     }
 }
