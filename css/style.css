@@ -1,263 +1,1400 @@
+
+Gemini와의 대화
 /* =========================
+
    Reset
+
 ========================= */
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
     font-family:Arial, sans-serif;
+
 }
 
+
+
 body{
+
     background:#f4f6f9;
+
     color:#111827;
+
     line-height:1.6;
+
+}
+
+
+
+/* 메뉴 열렸을 때 배경 스크롤 방지 */
+
+body.menu-open{
+
+    overflow:hidden;
+
+}
+
+
+
+/* =========================
+
+   Image
+
+========================= */
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+
+
+.responsive-img{
+
+    width:100%;
+
+    height:auto;
+
+    border-radius:10px;
+
+}
+
+
+
+/* =========================
+
+   Header
+
+========================= */
+
+header{
+
+    background:#2563eb;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:20px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+
+
+/* =========================
+
+   Container
+
+========================= */
+
+.container{
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:20px;
+
+}
+
+
+
+/* =========================
+
+   Card
+
+========================= */
+
+.card{
+
+    background:#fff;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    transition:transform .2s ease,
+
+               box-shadow .2s ease;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+}
+
+
+
+.card img{
+
+    width:100%;
+
+    height:auto;
+
+    border-radius:10px;
+
+}
+
+
+
+/* =========================
+
+   iframe
+
+========================= */
+
+iframe{
+
+    width:300px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#fff;
+
+}
+
+
+
+/* =========================
+
+   Menu Button
+
+========================= */
+
+.menu-btn{
+
+    position:fixed;
+
+    top:15px;
+
+    left:15px;
+
+    width:48px;
+
+    height:48px;
+
+    background:#6d28d9;
+
+    border:none;
+
+    border-radius:12px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:5px;
+
+    cursor:pointer;
+
+    z-index:1001;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+
+    transition:.2s;
+
+}
+
+
+
+.menu-btn:hover{
+
+    background:#5b21b6;
+
+}
+
+
+
+.menu-btn span{
+
+    width:22px;
+
+    height:2px;
+
+    background:#fff;
+
+    border-radius:2px;
+
+}
+
+
+
+/* 키보드 접근성 */
+
+.menu-btn:focus{
+
+    outline:2px solid #fff;
+
+    outline-offset:2px;
+
+}
+
+
+
+/* =========================
+
+   Side Menu
+
+========================= */
+
+.side-menu{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:260px;
+
+    height:100%;
+
+    background:#111827;
+
+    transform:translateX(-100%);
+
+    transition:transform .3s ease;
+
+    z-index:1002;
+
+    overflow-y:auto;
+
+    padding-top:60px;
+
+    box-shadow:2px 0 15px rgba(0,0,0,.25);
+
+}
+
+
+
+.side-menu.active{
+
+    transform:translateX(0);
+
+}
+
+
+
+.menu-title{
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:12px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    border-bottom:1px solid rgba(255,255,255,.1);
+
+}
+
+
+
+.side-menu a{
+
+    display:block;
+
+    padding:15px 20px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:.2s;
+
+}
+
+
+
+.side-menu a:hover{
+
+    background:#2563eb;
+
+}
+
+
+
+.side-menu a:focus{
+
+    outline:2px solid #fff;
+
+    outline-offset:-2px;
+
+}
+
+
+
+/* =========================
+
+   Overlay
+
+========================= */
+
+.overlay{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.5);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+
+
+.overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+/* =========================
+
+   Tablet
+
+========================= */
+
+@media (max-width:768px){
+
+
+
+    header{
+
+        padding:16px;
+
+        font-size:18px;
+
+    }
+
+
+
+    .container{
+
+        padding:15px;
+
+    }
+
+
+
+    .card{
+
+        padding:15px;
+
+    }
+
+
+
+
+
+    .side-menu{
+
+        width:240px;
+
+    }
+
+
+
+    .menu-btn{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+}
+
+
+
+/* =========================
+
+   Mobile
+
+========================= */
+
+@media (max-width:480px){
+
+
+
+    header{
+
+        font-size:16px;
+
+        padding:14px;
+
+    }
+
+
+
+    .container{
+
+        padding:10px;
+
+    }
+
+
+
+    .card{
+
+        padding:12px;
+
+        border-radius:12px;
+
+    }
+
+
+
+    .side-menu{
+
+        width:220px;
+
+    }
+
+
+
+    .menu-btn{
+
+        top:10px;
+
+        left:10px;
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+
+
+    .menu-btn span{
+
+        width:20px;
+
+    }
+
+}
+
+제공해주신 CSS 코드는 전반적으로 리셋, 컴포넌트 설계, 그리고 미디어 쿼리를 통한 반응형 대응까지 군더더기 없이 깔끔하게 잘 작성되어 있습니다.
+
+다만, 실제 서비스 환경이나 다양한 디바이스 환경에서 레이아웃이 깨지거나, 사용자 경험(UX) 및 접근성이 저하될 수 있는 미세한 취약점들이 몇 가지 보입니다. 이 부분들을 보완할 수 있는 코드 분석 및 최적화 가이드를 정리해 드립니다.
+
+🛠 주요 문제점 및 개선 방향
+1. iframe 반응형 대응 부족 (가장 중요한 부분)
+현재 iframe에 고정 가로폭(width: 300px;)이 지정되어 있습니다.
+
+문제점: 화면 너비가 300px 미만인 구형 스마트폰이나 극단적인 소형 화면에서 iframe이 부모 요소를 삐져나가 레이아웃이 깨질 수 있습니다.
+
+해결책: max-width: 100%;를 추가하여 화면이 작아지더라도 부모 요소의 크기에 맞춰 유연하게 줄어들도록 합니다.
+
+2. 모바일 환경에서 지나치게 좁아지는 사이드 메뉴 (.side-menu)
+현재 미디어 쿼리에서 화면이 작아질수록 메뉴 너비를 계속 줄이고 있습니다. (260px ➡️ 240px ➡️ 220px)
+
+문제점: 스마트폰 화면(480px 이하)에서 메뉴 너비가 220px까지 줄어들면, 내부에 들어갈 텍스트가 조금만 길어져도 줄바꿈이 일어나거나 가독성이 크게 떨어집니다. 보통 모바일 사이드 메뉴는 화면의 70~80% 수준을 차지하는 것이 터치하기 편리합니다.
+
+해결책: 모바일(480px 이하)에서는 고정 픽셀 대신 뷰포트 단위(vw)나 조금 더 여유 있는 퍼센트(%)를 사용하는 것이 좋습니다. (예: width: 75vw; max-width: 280px;)
+
+3. 모바일 터치 영역(Click Target) 크기 확보
+웹 표준(WCAG) 및 구글 라이트하우스(Lighthouse) 기준, 사용자가 손가락으로 누르는 버튼이나 링크는 최소 48px × 48px 이상의 크기를 가질 것을 권장합니다.
+
+문제점: 태블릿과 모바일 미디어 쿼리에서 .menu-btn의 크기를 각각 44px, 42px로 줄이고 있습니다. 화면이 작아질수록 손가락 터치는 더 힘들어지는데 버튼이 작아지는 역효과가 납니다.
+
+해결책: 데스크톱과 모바일 불문하고 메뉴 버튼 크기는 기존 48px를 유지하는 것이 좋습니다.
+
+✨ 최적화 및 개선된 CSS 코드
+위의 개선 사항들과 함께 코드의 유지보수성을 높이기 위해 CSS 변수(Variables)를 적극 도입하고, 중복되는 미디어 쿼리 구조를 깔끔하게 정돈한 최종 코드입니다.
+
+CSS
+/* =========================
+   Variables (테마 및 유지보수용)
+========================= */
+:root {
+    --bg-main: #f4f6f9;
+    --text-main: #111827;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent: #6d28d9;
+    --accent-hover: #5b21b6;
+    --white: #fff;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+    --shadow-lg: 0 8px 20px rgba(0,0,0,.12);
+    --transition-fast: .2s ease;
+    --transition-normal: .3s ease;
+}
+
+/* =========================
+   Reset & Base
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* 글꼴 부드럽게 */
 }
 
 /* 메뉴 열렸을 때 배경 스크롤 방지 */
-body.menu-open{
-    overflow:hidden;
+body.menu-open {
+    overflow: hidden;
 }
 
 /* =========================
-   Image
+   Media Elements
 ========================= */
-img{
-    max-width:100%;
-    height:auto;
-    display:block;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-.responsive-img{
-    width:100%;
-    height:auto;
-    border-radius:10px;
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* iframe 반응형 취약점 개선 */
+iframe {
+    width: 300px;
+    max-width: 100%; /* 부모 너비를 넘지 않도록 안전장치 추가 */
+    border: none;
+    border-radius: 10px;
+    background: var(--white);
 }
 
 /* =========================
-   Header
+   Layout & Components
 ========================= */
-header{
-    background:#2563eb;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+header {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Card */
+.card {
+    background: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* =========================
+   Navigation (Menu & Side Menu)
+========================= */
+/* UX 개선: 모바일에서도 터치하기 편하도록 48px 고정 */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: background var(--transition-fast);
+}
+
+.menu-btn:hover {
+    background: var(--accent-hover);
+}
+
+.menu-btn span {
+    width: 22px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+}
+
+.menu-btn:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px; /* 기본 너비를 살짝 늘려 가독성 확보 */
+    max-width: 80vw; /* 모바일 소형 기기 대응 */
+    height: 100%;
+    background: var(--text-main);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    z-index: 1002;
+    overflow-y: auto;
+    padding-top: 60px;
+    box-shadow: 2px 0 15px rgba(0,0,0,.25);
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.menu-title {
+    color: var(--white);
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    transition: background var(--transition-fast);
+}
+
+.side-menu a:hover {
+    background: var(--primary);
+}
+
+.side-menu a:focus {
+    outline: 2px solid var(--white);
+    outline-offset: -2px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    z-index: 1000;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   Responsive Media Queries
+========================= */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    header {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    .menu-btn {
+        top: 10px;
+        left: 10px;
+        /* 모바일 터치 영역 확보를 위해 width/height 축소 코드 제거 */
+    }
+}
+💡 추가 팁 (접근성 향상)
+나중에 JavaScript로 사이드 메뉴 토글 기능을 구현하실 때, .menu-btn에 aria-expanded="false" 속성을 넣고 메뉴가 열릴 때 true로 바뀌게 설정해 주시면 시각 장애인용 스크린 리더(접근성) 대응까지 완벽해집니다!
+
+글자 크기 추가
+
+요청하신 글자 크기(Font Size) 속성을 변수 시스템과 미디어 쿼리에 깔끔하게 통합했습니다.
+
+웹 표준과 반응형 디자인에 맞추어, 기본 텍스트와 제목(Heading)의 크기가 디바이스 환경(데스크톱, 태블릿, 모바일)에 따라 유연하게 작아지도록 세팅했습니다.
+
+🛠 주요 수정 내용
+CSS 변수(--fs-*) 추가: 글자 크기를 한곳에서 관리할 수 있도록 본문, 카드 제목, 헤더 타이틀용 변수를 등록했습니다.
+
+컴포넌트 적용: body, header, .card 내부에 적절한 글자 크기와 자간/두께를 지정했습니다.
+
+반응형 미디어 쿼리 최적화: 화면이 작아질 때마다 미디어 쿼리 내부에서 글자 크기 변수만 덮어쓰는 방식을 사용해 코드가 훨씬 간결해졌습니다.
+
+✨ 글자 크기가 추가된 최종 CSS 코드
+CSS
+/* =========================
+   Variables (테마, 유지보수, 글자 크기)
+========================= */
+:root {
+    /* Colors */
+    --bg-main: #f4f6f9;
+    --text-main: #111827;
+    --text-muted: #4b5563;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent: #6d28d9;
+    --accent-hover: #5b21b6;
+    --white: #fff;
+
+    /* Shadows & Transitions */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,.08);
+    --shadow-lg: 0 8px 20px rgba(0,0,0,.12);
+    --transition-fast: .2s ease;
+    --transition-normal: .3s ease;
+
+    /* Font Sizes (Desktop 기본값) */
+    --fs-base: 16px;         /* 기본 본문 텍스트 */
+    --fs-sm: 14px;           /* 작은 텍스트 (부가 정보 등) */
+    --fs-md: 18px;           /* 중간 크기 (메뉴 타이틀 등) */
+    --fs-lg: 22px;           /* 서브 타이틀 (카드 제목 등) */
+    --fs-xl: 28px;           /* 메인 타이틀 (헤더 등) */
+}
+
+/* =========================
+   Reset & Base
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-size: var(--fs-base); /* 기본 글자 크기 적용 */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 메뉴 열렸을 때 배경 스크롤 방지 */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* =========================
+   Media Elements
+========================= */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+iframe {
+    width: 300px;
+    max-width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: var(--white);
+}
+
+/* =========================
+   Layout & Components
+========================= */
+header {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 24px 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+header h1 {
+    font-size: var(--fs-xl); /* 헤더 타이틀 크기 */
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Card */
+.card {
+    background: var(--white);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* 카드 내부 글자 크기 정의 */
+.card h2 {
+    font-size: var(--fs-lg);
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.card p {
+    font-size: var(--fs-base);
+    color: var(--text-muted);
+}
+
+/* =========================
+   Navigation (Menu & Side Menu)
+========================= */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 48px;
+    height: 48px;
+    background: var(--accent);
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: background var(--transition-fast);
+}
+
+.menu-btn:hover {
+    background: var(--accent-hover);
+}
+
+.menu-btn span {
+    width: 22px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+}
+
+.menu-btn:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    max-width: 80vw;
+    height: 100%;
+    background: var(--text-main);
+    transform: translateX(-100%);
+    transition: transform var(--transition-normal);
+    z-index: 1002;
+    overflow-y: auto;
+    padding-top: 60px;
+    box-shadow: 2px 0 15px rgba(0,0,0,.25);
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.menu-title {
+    color: var(--white);
+    text-align: center;
+    padding: 15px;
+    font-size: var(--fs-md);
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+
+.side-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--white);
+    font-size: var(--fs-base);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    transition: background var(--transition-fast);
+}
+
+.side-menu a:hover {
+    background: var(--primary);
+}
+
+.side-menu a:focus {
+    outline: 2px solid var(--white);
+    outline-offset: -2px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    z-index: 1000;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   Responsive Media Queries
+========================= */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    :root {
+        /* 태블릿 환경에 맞춰 전반적인 글자 크기 한 단계씩 축소 */
+        --fs-xl: 24px;
+        --fs-lg: 20px;
+        --fs-md: 17px;
+        --fs-base: 15px;
+    }
+
+    header {
+        padding: 18px 16px;
+    }
+
+    .container, .card {
+        padding: 15px;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    :root {
+        /* 모바일 환경에 최적화된 컴팩트한 글자 크기 */
+        --fs-xl: 20px;
+        --fs-lg: 18px;
+        --fs-md: 16px;
+        --fs-base: 14px;
+        --fs-sm: 13px;
+    }
+
+    header {
+        padding: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    .menu-btn {
+        top: 10px;
+        left: 10px;
+    }
+}
+아니 H1, H2 등 이 부분을 크자 크기 지정
+
+아, 제가 변수로 한 단계 거쳐서 적용하다 보니 의도가 잘못 전달되었군요! 무슨 말씀이신지 정확히 이해했습니다.
+
+CSS 변수 대신, HTML 태그인 h1, h2, h3, p 등에 직관적으로 글자 크기(px)를 직접 지정하고, 미디어 쿼리(반응형)에서도 해당 태그들의 크기가 바로 조절되도록 직관적으로 수정했습니다.
+
+🛠 수정된 핵심 포인트
+직관적인 태그 지정: header h1, .card h2 등에 font-size: 28px;와 같이 명확하게 크기를 꽂아 넣었습니다.
+
+미디어 쿼리 직관화: 화면이 작아질 때(768px, 480px) 각 태그의 글자 크기가 어떻게 줄어드는지 미디어 쿼리 안에서 한눈에 볼 수 있도록 바꿨습니다.
+
+✨ 최종 CSS 코드
+CSS
+/* =========================
+   Reset
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #111827;
+    line-height: 1.6;
+    font-size: 16px; /* 기본 본문 크기 */
+}
+
+/* 메뉴 열렸을 때 배경 스크롤 방지 */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* =========================
+   Image & Media
+========================= */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+iframe {
+    width: 300px;
+    max-width: 100%; /* 부모 너비 이탈 방지 */
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+}
+
+/* =========================
+   Header (H1)
+========================= */
+header {
+    background: #2563eb;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+header h1 {
+    font-size: 28px; /* 데스크톱 H1 크기 */
+    font-weight: bold;
 }
 
 /* =========================
    Container
 ========================= */
-.container{
-    max-width:1100px;
-    margin:0 auto;
-    padding:20px;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* =========================
-   Card
+   Card (H2, P)
 ========================= */
-.card{
-    background:#fff;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:15px;
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-    transition:transform .2s ease,
-               box-shadow .2s ease;
+.card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
-.card img{
-    width:100%;
-    height:auto;
-    border-radius:10px;
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-/* =========================
-   iframe
-========================= */
-iframe{
-    width:300px;
-    border:none;
-    border-radius:10px;
-    background:#fff;
+/* 카드 내부 제목과 본문 크기 */
+.card h2 {
+    font-size: 22px; /* 데스크톱 H2 크기 */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 16px; /* 데스크톱 카드 본문 크기 */
+    color: #4b5563;
 }
 
 /* =========================
    Menu Button
 ========================= */
-.menu-btn{
-    position:fixed;
-    top:15px;
-    left:15px;
-    width:48px;
-    height:48px;
-    background:#6d28d9;
-    border:none;
-    border-radius:12px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:5px;
-    cursor:pointer;
-    z-index:1001;
-    box-shadow:0 4px 12px rgba(0,0,0,.2);
-    transition:.2s;
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 48px;
+    height: 48px;
+    background: #6d28d9;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: .2s;
 }
 
-.menu-btn:hover{
-    background:#5b21b6;
+.menu-btn:hover {
+    background: #5b21b6;
 }
 
-.menu-btn span{
-    width:22px;
-    height:2px;
-    background:#fff;
-    border-radius:2px;
+.menu-btn span {
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
 }
 
-/* 키보드 접근성 */
-.menu-btn:focus{
-    outline:2px solid #fff;
-    outline-offset:2px;
+.menu-btn:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
 }
 
 /* =========================
    Side Menu
 ========================= */
-.side-menu{
-    position:fixed;
-    top:0;
-    left:0;
-    width:260px;
-    height:100%;
-    background:#111827;
-    transform:translateX(-100%);
-    transition:transform .3s ease;
-    z-index:1002;
-    overflow-y:auto;
-    padding-top:60px;
-    box-shadow:2px 0 15px rgba(0,0,0,.25);
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background: #111827;
+    transform: translateX(-100%);
+    transition: transform .3s ease;
+    z-index: 1002;
+    overflow-y: auto;
+    padding-top: 60px;
+    box-shadow: 2px 0 15px rgba(0,0,0,.25);
 }
 
-.side-menu.active{
-    transform:translateX(0);
+.side-menu.active {
+    transform: translateX(0);
 }
 
-.menu-title{
-    color:#fff;
-    text-align:center;
-    padding:12px;
-    font-size:18px;
-    font-weight:bold;
-    border-bottom:1px solid rgba(255,255,255,.1);
+.menu-title {
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-size: 18px; /* 메뉴 상단 타이틀 크기 */
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
-.side-menu a{
-    display:block;
-    padding:15px 20px;
-    color:#fff;
-    text-decoration:none;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    transition:.2s;
+.side-menu a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 16px; /* 메뉴 링크 글자 크기 */
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    transition: .2s;
 }
 
-.side-menu a:hover{
-    background:#2563eb;
+.side-menu a:hover {
+    background: #2563eb;
 }
 
-.side-menu a:focus{
-    outline:2px solid #fff;
-    outline-offset:-2px;
+.side-menu a:focus {
+    outline: 2px solid #fff;
+    outline-offset: -2px;
 }
 
 /* =========================
    Overlay
 ========================= */
-.overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.5);
-    opacity:0;
-    visibility:hidden;
-    transition:.3s;
-    z-index:1000;
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 1000;
 }
 
-.overlay.active{
-    opacity:1;
-    visibility:visible;
-}
-
-/* =========================
-   Tablet
-========================= */
-@media (max-width:768px){
-
-    header{
-        padding:16px;
-        font-size:18px;
-    }
-
-    .container{
-        padding:15px;
-    }
-
-    .card{
-        padding:15px;
-    }
-
-
-    .side-menu{
-        width:240px;
-    }
-
-    .menu-btn{
-        width:44px;
-        height:44px;
-    }
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* =========================
-   Mobile
+   Tablet (태블릿 글자 크기 조정)
 ========================= */
-@media (max-width:480px){
-
-    header{
-        font-size:16px;
-        padding:14px;
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px; /* 태블릿 H1 */
     }
 
-    .container{
-        padding:10px;
+    .card h2 {
+        font-size: 20px; /* 태블릿 H2 */
     }
 
-    .card{
-        padding:12px;
-        border-radius:12px;
+    .card p {
+        font-size: 15px; /* 태블릿 본문 */
     }
 
-    .side-menu{
-        width:220px;
-    }
-
-    .menu-btn{
-        top:10px;
-        left:10px;
-        width:42px;
-        height:42px;
-    }
-
-    .menu-btn span{
-        width:20px;
-    }
+    header { padding: 16px; }
+    .container, .card { padding: 15px; }
 }
+
+/* =========================
+   Mobile (모바일 글자 크기 조정)
+========================= */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px; /* 모바일 H1 */
+    }
+
+    .card h2 {
+        font-size: 18px; /* 모바일 H2 */
+    }
+
+    .card p {
+        font-size: 14px; /* 모바일 본문 */
+    }
+
+    .menu-title {
+        font-size: 16px; /* 모바일 메뉴 타이틀 */
+    }
+
+    .side-menu a {
+        font-size: 14px; /* 모바일 메뉴 링크 */
+    }
+
+    header { padding: 14px; }
+    .container { padding: 10px; }
+    .card { padding: 12px; border-radius: 12px; }
+    .menu-btn { top: 10px; left: 10px; }
+}
+Gemini는 AI이며 인물 등에 관한 정보 제공 시 실수를 할 수 있습니다. 개인 정보 보호 및 Gemini새 창에서 열기
+
+
+
+
