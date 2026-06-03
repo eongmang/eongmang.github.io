@@ -24,6 +24,10 @@ li {
   position: fixed;
   top: 0;
     }
+#wrap {
+  /* margin-top = header height */
+  margin-top: 60p;
+}
     nav {
       float: right;
     }
