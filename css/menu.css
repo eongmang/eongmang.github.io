@@ -33,7 +33,8 @@
     }
 
 .menu-icon {
-   width: 30px;
+    width:48px;
+    height:48px;
    cursor: pointer;
    background:#6d28d9;
    border:none;
