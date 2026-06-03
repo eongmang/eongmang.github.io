@@ -216,9 +216,6 @@ iframe{
         padding:15px;
     }
 
-    iframe{
-        height:65vh;
-    }
 
     .side-menu{
         width:240px;
@@ -247,11 +244,6 @@ iframe{
     .card{
         padding:12px;
         border-radius:12px;
-    }
-
-    iframe{
-        height:60vh;
-
     }
 
     .side-menu{
