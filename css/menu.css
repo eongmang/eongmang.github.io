@@ -9,8 +9,6 @@
    z-index: 2000;
    background-color: #fff;
    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(0, 0, 0, 0.05);
-       justify-content:center;
-    align-items:center;
 }
 
     nav {
@@ -37,20 +35,26 @@
 .menu-icon {
        top:15px;
        left:15px;
-    width:48px;
-    height:48px;
+    width:35px;
+    height:30px;
    cursor: pointer;
    background:#6d28d9;
    border:none;
    border-radius:12px;
    box-shadow:0 4px 12px rgba(0,0,0,.2);
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+   
 }
 
 .menu-icon span {
-    width:22px;
-    height:2px;
-    background:#fff;
-    border-radius:2px;
+  display: block;
+  height: 4px;         /* 선 두께 */
+  width: 100%;         /* 선 길이 */
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease; 
 }
 .menu-btn{
 /*    position:fixed; */
