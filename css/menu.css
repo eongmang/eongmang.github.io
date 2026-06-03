@@ -12,6 +12,27 @@
   top: 0;
     }
 
+    nav {
+      float: right;
+    }
+    .logo {
+      display: inline-block;
+      height: 36px;
+      margin: 12px 0 12px 25px;
+    }
+    .logo > img { height: 36px; }
+    .nav-items > li {
+      display: inline-block;
+    }
+    .nav-items > li > a {
+      line-height: 60px;
+      padding: 0 30px;
+      color: rgba(0,0,0,0.4);
+    }
+    .nav-items > li > a:hover {
+      color: rgba(0,0,0,0.8);
+    }
+
 .menu-btn{
     position:fixed;
     top:15px;
