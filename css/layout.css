@@ -1,63 +1,17 @@
 
 /* =========================
    Base Layout
-
+========================= */
 body {
     line-height: 1.6;
 }
-========================= */
+
 /* =========================
    Container
-
+========================= */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
 }
-========================= */
-/* =========================
-   Header
-========================= */
-header {
-    text-align: center;
-    padding: 20px;
-}
 
-/* =========================
-   Card
-========================= */
-.card {
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 15px;
-}
-
-/* =========================
-   iframe
-========================= */
-iframe {
-    width: 300px;
-    max-width: 100%;
-    border: none;
-}
-
-/* =========================
-   Responsive Layout
-========================= */
-@media (max-width: 768px) {
-    .container,
-    .card {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-
-    .card {
-        padding: 12px;
-        border-radius: 12px;
-    }
-}
