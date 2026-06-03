@@ -1,1 +1,1 @@
-
+code, pre { font-family: "Roboto Mono", monospace; } code { background: rgba(0,0,0,.05); padding: 2px 5px; border-radius: 4px; } pre { overflow-x: auto; } pre code { display: block; padding: 1rem; }
